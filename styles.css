@@ -40,6 +40,10 @@ nav ul li a:focus {
     background-color: white;
     color: darkgreen;
 }
+.about{
+    padding-left: 40px;
+    padding-right: 40px;
+}
 
 .hero {
     text-align: center;
