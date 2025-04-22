@@ -6,17 +6,40 @@ body {
 }
 
 header {
-    background-color: darkgreen;
+    background-color: rgb(17, 171, 60);
     color: white;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+header img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
 
 header h1 {
     font-size: 24px;
     margin: 0;
+    
+}
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.logo-title img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px; /* Atur jarak antara logo dan teks */
+}
+
+.logo-title h1 {
+  font-size: 24px;
+  margin: 0;
+  color: white;
+  font-weight: bold;
 }
 
 nav ul {
