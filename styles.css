@@ -61,6 +61,16 @@ nav ul li a:focus {
     line-height: 1.5;
 }
 
+.hero-Contact {
+    text-align: center;
+    padding: 5px 10px;
+    background-color: #e0f7e4;
+}
+
+.hero-Contact h2{
+    color: #2e7d32;
+}
+
 .products {
     display: flex;
     justify-content: center;
@@ -202,4 +212,30 @@ nav ul li a:focus {
         flex-direction: column;
         align-items: center;
     }
+}
+
+.contact-form {
+    max-width: 600px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: darkgreen;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
 }
