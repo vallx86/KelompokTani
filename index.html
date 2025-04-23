@@ -6,36 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetaniGenZ</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
-<body>  
     <header>
         <div class="logo-title">
             <img src="Image\LOGO GENZ.png" alt="logo">
             <h1>PetaniGenZ</h1>
         </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Member</a></li>
-                    <li><a href="About.html">About us</a></li>
-                    <li><a href="Contact.html">Contact</a></li>
-                    <li><a href="#">Log In</a></li>
-                </ul>
-            </nav>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Member</a></li>
+                <li><a href="About.html">About us</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="#">Log In</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h2>ORDER & SEWA YANG KAMU BUTUHKAN</h2>
-            <p>Menawarkan layanan yang kamu butuhkan untuk pertanian<br>dengan harga yang bersahabat</p>
+            <div class="hero-right">
+                <img src="Image\Hasil panen.png" alt="icon" class="hero-img">
+            </div>
+            <!-- Left -->
+            <div class="hero-left">
+                <h1>ORDER & SEWA<br>YANG KAMU BUTUHKAN</h1>
+                <p class="desc">Kami menyediakan berbagai produk pertanian serta layanan penyewaan alat tani modern untuk membantu meningkatkan produktivitas dan efisiensi kerja para petani di seluruh penjuru Indonesia.</p>
+                <div class="buttons">
+                    <button class="btn-green">Order Sekarang</button>
+                    <button class="btn-outline">Informasi Lain →</button>
+                </div>
+            </div>
         </section>
 
         <section class="products">
             <!-- Kartu Produk 1 -->
             <div class="card">
-                <div class="circle"></div>
-                <div class="title-placeholder">Pupuk Kompos</div>
+                <div class="circle-img">
+                    <img src="Image\kompos.jpg" alt="Insektisida">
+                </div>
+                <div class="title-placeholder" >Pupuk Kompos</div>
                 <div class="text-content">
                     <p>Pupuk kompos organik</p>
                     <p>dapat di gunakan untuk</p>
@@ -49,7 +60,9 @@
 
             <!-- Kartu Produk 2 -->
             <div class="card">
-                <div class="circle"></div>
+                <div class="circle-img">
+                    <img src="Image\Radoc.jpg" alt="Insektisida">
+                </div>
                 <div class="title-placeholder">Insektisida</div>
                 <div class="text-content">
                     <p>Insektisida Radoc 500 EC</p>
@@ -65,7 +78,9 @@
 
             <!-- Kartu Produk 3 -->
             <div class="card">
-                <div class="circle"></div>
+                <div class="circle-img">
+                    <img src="Image\boster lengkeng.jpg" alt="Insektisida">
+                </div>
                 <div class="title-placeholder">Booster Lengkeng</div>
                 <div class="text-content">
                     <p>untuk merangsang munculnya</p>
@@ -80,7 +95,9 @@
 
             <!-- Kartu Produk 4 -->
             <div class="card">
-                <div class="circle"></div>
+                <div class="circle-img">
+                    <img src="Image\biji benih.jpg" alt="Insektisida">
+                </div>
                 <div class="title-placeholder">Benih Cover Crop</div>
                 <div class="text-content">
                     <p>Kacang Kacangan Mucuna</p>
@@ -92,7 +109,12 @@
                     <button class="buy-btn">Beli</button>
                 </div>
             </div>
+            <div class="btn-outline">
+                <a href=""></a>
+                Telusuri lebih Lanjut >
+            </div>
         </section>
+
 
         <section class="footer-info">
             <h3>Our Services</h3>
