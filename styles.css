@@ -6,13 +6,14 @@ body {
 }
 
 header {
-    background-color:#5eb101;
+    background-color: #5eb101;
     color: white;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 header img {
     height: 40px;
     width: auto;
@@ -22,26 +23,27 @@ header img {
 header h1 {
     font-size: 24px;
     margin: 0;
-    
+
 }
 
-  
+
 .logo-title {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .logo-title img {
-  height: 40px;
-  width: auto;
-  margin-right: 10px; /* Atur jarak antara logo dan teks */
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+    /* Atur jarak antara logo dan teks */
 }
 
 .logo-title h1 {
-  font-size: 24px;
-  margin: 0;
-  color: white;
-  font-weight: bold;
+    font-size: 24px;
+    margin: 0;
+    color: white;
+    font-weight: bold;
 }
 
 nav ul {
@@ -65,7 +67,8 @@ nav ul li a:focus {
     background-color: white;
     color: darkgreen;
 }
-.about{
+
+.about {
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -109,7 +112,7 @@ nav ul li a:focus {
 .desc {
     margin: 10px 0;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .buttons {
@@ -125,6 +128,7 @@ nav ul li a:focus {
     font-weight: bold;
     margin-right: 10px;
 }
+
 .btn-green:hover {
     background: #6fda44;
     color: #ffffff;
@@ -138,10 +142,12 @@ nav ul li a:focus {
     color: #206f2c;
     font-weight: bold;
 }
+
 .btn-outline:hover {
-    background:#6fda44;
+    background: #6fda44;
     color: #ffffff;
 }
+
 .products {
     display: flex;
     justify-content: center;
@@ -174,18 +180,21 @@ nav ul li a:focus {
     border-radius: 50%;
     margin: 0 auto 16px auto;
 }
+
 .circle-img {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 10px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 5px solid #A0EB3C; /* warna border hijau muda */
-  background-color: #7ce814;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #A0EB3C;
+    /* warna border hijau muda */
+    background-color: #7ce814;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .circle-img img {
     width: 100%;
     height: 100%;
@@ -225,6 +234,7 @@ nav ul li a:focus {
     font-weight: bold;
     color: #2e7d32;
 }
+
 /* .more-info {
     margin-top: 10px;
     padding: 6px 12px;
@@ -254,6 +264,65 @@ nav ul li a:focus {
 .buy-btn:hover {
     background: #3d8b40;
 }
+
+.who1{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Konten mulai dari kiri */
+    padding: 30px 0px;
+    gap: 0px;
+    /* Jarak antar gambar dan teks */
+    flex-wrap: wrap;
+}
+.who2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 40px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.who img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.who-right {
+    flex-shrink: 0;
+    max-width: 400px;
+}
+
+.whotxt-right {
+    flex: 1;
+    min-width: 300px;
+    padding-left: 20px;
+}
+
+.whotxt-right h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #5eb101;
+}
+.who-left {
+    flex: 1;
+    max-width: 500px;
+
+}
+.whotxt-left {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 20px;
+}
+
+.whotxt-left h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #5eb101;
+}
+
 
 .footer-info {
     padding: 40px 20px;
