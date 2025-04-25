@@ -400,8 +400,8 @@ nav ul li a:focus {
     place-items: center;
     height: 70px;
     width: auto;
-    margin-top: 30px;
-    margin-bottom: 65px;
+    margin-top: 60px;
+    margin-bottom: 75px;
 }
 
 .Contact-logo img {
@@ -427,14 +427,37 @@ nav ul li a:focus {
     margin-top: 90px;
 }
 
+.Footer-Contact-Section {
+    margin-top: 10px;
+    margin-bottom: 35px;
+    flex: 1;
+}
+
+.Contact-Sosmed {
+    width: 50%;
+    text-align: right;
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
 .Footer-Contact {
     background-color: #5eb101;
-    padding: 40px 20px;
+    padding: 5px 20px;
     color: #ffffff;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+    display: flex;
+    justify-content: center; /* Posisikan di tengah secara vertikal */
+    align-items: center; /* Posisikan di tengah secara horizontal */
+
+}
+
+.Footer-Contact p {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
 }
 
 .Footer-Contact a {
