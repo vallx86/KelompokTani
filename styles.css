@@ -109,6 +109,17 @@ nav ul li a:focus {
     color: #5eb101;
 }
 
+.hero-Contact {
+    text-align: center;
+    line-height: 10px;
+    padding-top: 60px;
+}
+
+.hero-Contact a {
+    color: #215d00;
+    text-decoration: none;
+}
+
 .desc {
     margin: 10px 0;
     color: #666;
@@ -267,7 +278,7 @@ nav ul li a:focus {
     background: #3d8b40;
 }
 
-.who1{
+.who1 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -277,15 +288,16 @@ nav ul li a:focus {
     /* Jarak antar gambar dan teks */
     flex-wrap: wrap;
 }
+
 .who2 {
-         display: flex;
-        flex-direction: row-reverse;
-        /* Tambahkan ini */
-        align-items: center;
-        justify-content: space-between;
-        padding-bottom: 100px;
-        gap: 40px;
-        flex-wrap: wrap;
+    display: flex;
+    flex-direction: row-reverse;
+    /* Tambahkan ini */
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 100px;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 .who img {
@@ -310,11 +322,13 @@ nav ul li a:focus {
     font-weight: bold;
     color: #5eb101;
 }
+
 .who-left {
     max-width: 500px;
     justify-content: end;
 
 }
+
 .whotxt-left {
     min-width: 300px;
     padding-left: 415px;
@@ -389,26 +403,58 @@ nav ul li a:focus {
     }
 }
 
-.contact-form {
-    max-width: 600px;
-    text-align: center;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.Contact-logo {
+    place-items: center;
+    height: 70px;
+    width: auto;
+    margin-top: 60px;
+    margin-bottom: 75px;
 }
 
-.contact-form h2 {
-    text-align: center;
-    color: darkgreen;
+.Contact-logo img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.contact-info {
-    margin-top: 20px;
+.Contact-logo h1 {
+    color: #2e7d32;
 }
 
-.contact-item {
+.Contact-Button:hover {
+    background-color: #4caf50;
+}
+
+.Contact-Button {
+    background-color: white;
+    border: 2px solid #6fda44;
+    padding: 10px 25px;
+    border-radius: 25px;
+    color: #206f2c;
+    font-weight: bold;
+    margin-top: 90px;
+}
+
+.Footer-Contact-Section {
+    margin-top: 10px;
+    margin-bottom: 35px;
+    flex: 1;
+}
+
+.Contact-Sosmed {
+    width: 50%;
+    text-align: right;
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+.Footer-Contact {
+    background-color: #5eb101;
+    padding: 5px 20px;
+    color: #ffffff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -416,12 +462,33 @@ nav ul li a:focus {
 }
 
 /* TOKO */
-.btn-header{
+.btn-header {
     display: flex;
     text-decoration: none;
     justify-content: space-between;
     align-items: center;
-        padding: 60px 40px;
-        gap: 40px;
-        flex-wrap: wrap;
+    padding: 60px 40px;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Posisikan di tengah secara vertikal */
+    align-items: center;
+    /* Posisikan di tengah secara horizontal */
+
+}
+
+.Footer-Contact p {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.Footer-Contact a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.Footer-Contact a:hover {
+    color: blueviolet;
+    text-decoration: underline;
 }
