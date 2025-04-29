@@ -127,6 +127,7 @@ nav ul li a:focus {
     color: #215d00;
     font-weight: bold;
     margin-right: 10px;
+    text-decoration: none;
 }
 
 .btn-green:hover {
@@ -141,6 +142,7 @@ nav ul li a:focus {
     border-radius: 25px;
     color: #206f2c;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .btn-outline:hover {
@@ -276,12 +278,14 @@ nav ul li a:focus {
     flex-wrap: wrap;
 }
 .who2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px 40px;
-    gap: 40px;
-    flex-wrap: wrap;
+         display: flex;
+        flex-direction: row-reverse;
+        /* Tambahkan ini */
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 100px;
+        gap: 40px;
+        flex-wrap: wrap;
 }
 
 .who img {
@@ -307,14 +311,13 @@ nav ul li a:focus {
     color: #5eb101;
 }
 .who-left {
-    flex: 1;
     max-width: 500px;
+    justify-content: end;
 
 }
 .whotxt-left {
-    flex: 1;
     min-width: 300px;
-    padding-right: 20px;
+    padding-left: 415px;
 }
 
 .whotxt-left h1 {
@@ -334,6 +337,7 @@ nav ul li a:focus {
     margin-bottom: 30px;
     color: #2e7d32;
 }
+
 
 .services-container {
     display: flex;
@@ -409,4 +413,15 @@ nav ul li a:focus {
     align-items: center;
     gap: 15px;
     margin: 15px 0;
+}
+
+/* TOKO */
+.btn-header{
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+        padding: 60px 40px;
+        gap: 40px;
+        flex-wrap: wrap;
 }
