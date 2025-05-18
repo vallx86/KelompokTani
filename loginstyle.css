@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+ font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+    width: 800px;
+    height: 500px;
+    background: #fff;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.signin-container,
+.signup-container {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-container h2,
+.signup-container h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.social-icons button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #656565;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.signin-container p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    background: #eee;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+a {
+    font-size: 13px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.signin-btn,
+.signup-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signin-btn {
+    background: #04db53;
+    color: white;
+}
+
+.signup-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.signup-container {
+    background: linear-gradient(to right, #6fda44, #04db53);
+    color: white;
+    text-align: center;
+}
+
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: 500;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+form button {
+    width: 100%;
+    background-color: #6fda44;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049; }
