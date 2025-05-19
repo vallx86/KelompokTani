@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
     <link rel="stylesheet" href="loginstyle.css" />
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (email === "" || password === "") {
+                alert("Email dan password tidak boleh kosong!");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 
 <body>
@@ -18,14 +31,17 @@
                 <button><i>in</i></button>
             </div>
             <p>atau gunakan akun anda</p>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <a href="#">Lupa kata sandi anda?</a>
-            <div class="signin-btn">
-                <a href="index.html">Login</a>
-            </div>
-            
+
+            <form action="login.php" method="post" onsubmit="return validateForm()">
+                <input type="email" id="email" name="email" placeholder="Email" />
+                <input type="password" id="password" name="password" placeholder="Password" />
+                <a href="#">Lupa kata sandi anda?</a>
+                <div class="signin-btn">
+                    <input type="submit" value="Login" />
+                </div>
+            </form>
         </div>
+
         <div class="signup-container">
             <h2>Halo, Teman!</h2>
             <p>Daftarkan diri anda dan mulai gunakan layanan kami segera</p>

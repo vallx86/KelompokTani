@@ -4,38 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Register UI</title>
+    <title>Create Account</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="loginstyle.css">
 </head>
 
 <body>
     <div class="container">
+        <!-- Form Create Account -->
         <div class="signin-container">
-            <div class="logo">
-                <h3>PetaniGenz</h3>
-            </div>
-            <h2>Welcome Back!</h2>
-            <p>To keep connected with us please<br>login with your personal info</p>
-            <button class="signup-btn">SIGN IN</button>
-        </div>
-
-        <div class="signup-container">
             <h2>Create Account</h2>
             <div class="social-icons">
-                <button>f</button>
-                <button>G+</button>
-                <button>in</button>
+                <button><em>f</em></button>
+                <button><em>G+</em></button>
+                <button><em>in</em></button>
             </div>
-            <p>or use your email for registration:</p>
+            <p>Atau gunakan email anda untuk pendaftaran</p>
             <form>
                 <input type="text" placeholder="Name" required>
                 <input type="email" placeholder="Email" required>
                 <input type="password" placeholder="Password" required>
-                <button type="submit" class="signup-btn">SIGN UP</button>
+                <div class="signin-btn" >
+                    <a href="login.html">Create Account</a>
+                </div>
             </form>
         </div>
+
+        <!-- Panel Hijau -->
+        <div class="signup-container">
+            <h2>Welcome Back!!</h2>
+            <p>Yuk buat akun kamu disini<br>Agar kamu lebih mudah untuk keluar masuk di website ini</p>
+        </div>
     </div>
+    <script>
+        // Tangkap form saat user klik submit
+        document.getElementById("signupForm").addEventListener("submit", function (e) {
+            const name = this.querySelector('input[type="text"]');
+            const email = this.querySelector('input[type="email"]');
+            const password = this.querySelector('input[type="password"]');
+
+            if (!name.value.trim() || !email.value.trim() || !password.value.trim()) {
+                alert("Semua kolom harus diisi untuk Sign Up!");
+                e.preventDefault();
+            }
+        });
+    </script>
 </body>
 
 </html>
