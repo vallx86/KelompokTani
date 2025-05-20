@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const user = localStorage.getItem("user");
+            const userInfo = document.getElementById("userInfo");
+
+            if (!user) {
+                window.location.href = "login.html"; 
+            } else {
+                userInfo.textContent = `Selamat datang, ${user}!`;
+            }
+
+            document.getElementById("logoutBtn").addEventListener("click", function () {
+                localStorage.removeItem("user");
+                window.location.href = "login.html";
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="">
+        <h2>Dashboard</h2>
+        <p id="userInfo"></p>
+        <button id="logoutBtn">Logout</button>
+
+        </div>
+    </div>
+</body>
+
+</html>

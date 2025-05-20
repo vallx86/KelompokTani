@@ -8,16 +8,54 @@
     <link rel="stylesheet" href="loginstyle.css" />
 
     <script>
-        function validateForm() {
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginForm = document.getElementById("loginForm");
+            const messageBox = document.getElementById("message");
 
-            if (email === "" || password === "") {
-                alert("Email dan password tidak boleh kosong!");
-                return false;
+            if (localStorage.getItem("user")) {
+                window.location.href = "index.html";
             }
-            return true;
-        }
+
+            loginForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
+
+                if (email === "" || password === "") {
+                    messageBox.textContent = "Email dan password tidak boleh kosong!";
+                    return;
+                }
+
+                const users = JSON.parse(localStorage.getItem("users")) || [];
+
+
+                const userValid = users.find(user => user.email === email && user.password === password);
+
+                if (userValid) {
+                    messageBox.textContent = "Login berhasil!";
+                    localStorage.setItem("user", email);
+                    setTimeout(() => window.location.href = "index.html", 1000);
+                } else {
+                    messageBox.textContent = "Email atau password salah!";
+                }
+            });
+
+            document.getElementById("logoutBtn").addEventListener("click", function () {
+                localStorage.removeItem("user");
+                window.location.href = "login.html";
+            });
+
+            const defaultUsers = [
+                { email: "fadel@gmail.com", password: "fadel123" },
+                { email: "rival@gmail.com", password: "rival123" }
+                
+            ];
+
+            if (!localStorage.getItem("users")) {
+                localStorage.setItem("users", JSON.stringify(defaultUsers));
+            }
+        });
     </script>
 </head>
 
@@ -25,29 +63,22 @@
     <div class="container">
         <div class="signin-container">
             <h2>Sign in</h2>
-            <div class="social-icons">
-                <button><i>f</i></button>
-                <button><i>G+</i></button>
-                <button><i>in</i></button>
-            </div>
-            <p>atau gunakan akun anda</p>
+            <p>Gunakan akun Anda untuk masuk</p>
 
-            <form action="login.php" method="post" onsubmit="return validateForm()">
-                <input type="email" id="email" name="email" placeholder="Email" />
-                <input type="password" id="password" name="password" placeholder="Password" />
-                <a href="#">Lupa kata sandi anda?</a>
-                <div class="signin-btn">
-                    <input type="submit" value="Login" />
-                </div>
+            <form id="loginForm">
+                <input type="email" id="email" name="email" placeholder="Email" required />
+                <input type="password" id="password" name="password" placeholder="Password" required />
+                <p id="message"></p>
+                <input class="signin-btn" type="submit" value="Login" />
             </form>
+
+            <button id="logoutBtn" style="display: none;">Logout</button>
         </div>
 
         <div class="signup-container">
             <h2>Halo, Teman!</h2>
-            <p>Daftarkan diri anda dan mulai gunakan layanan kami segera</p>
-            <div class="signup-btn">
-                <a href="sigin.html">SIGN UP</a>
-            </div>
+            <p>Daftarkan diri Anda dan mulai gunakan layanan kami segera</p>
+            <a href="sigin.html" class="signup-btn">SIGN UP</a>
         </div>
     </div>
 </body>

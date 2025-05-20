@@ -117,11 +117,12 @@ a {
     border: none;
     border-radius: 25px;
     background: #04db53;
-    color: white;
+    color: #ffffff;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
     text-align: center;
+    
 }
 
 /* FORM CONTAINER (Optional for other forms if needed) */
