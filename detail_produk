@@ -1,0 +1,113 @@
+<?php
+include 'koneksi.php';
+session_start();
+
+if (!isset($_GET['id'])) {
+    echo "ID produk tidak ditemukan.";
+    exit;
+}
+
+$id = intval($_GET['id']);
+$query = "SELECT * FROM produk WHERE id = $id";
+$result = $conn->query($query);
+
+if ($result->num_rows === 0) {
+    echo "Produk tidak ditemukan.";
+    exit;
+}
+
+$produk = $result->fetch_assoc();
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Produk - <?= htmlspecialchars($produk['nama']) ?></title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .detail-container {
+            display: flex;
+            padding: 50px;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .detail-container img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .detail-info {
+            max-width: 500px;
+        }
+
+        .detail-info h2 {
+            margin-top: 0;
+        }
+
+        .form-beli input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        .form-beli button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .harga {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    <div class="logo-title">
+            <img src="Image/LOGO GENZ.png" alt="logo">
+            <h1>PetaniGenZ</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="#">Keranjang</a></li>
+                <li><a href="About.html">About us</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="detail-container">
+        <div>
+            <img src="Image/pestisida/<?= htmlspecialchars($produk['gambar']) ?>"
+                alt="<?= htmlspecialchars($produk['nama']) ?>">
+        </div>
+        <div class="detail-info">
+            <h2><?= htmlspecialchars($produk['nama']) ?></h2>
+            <div class="harga">Harga: Rp. <?= number_format($produk['harga'], 0, ',', '.') ?></div>
+            <p><?= nl2br(htmlspecialchars($produk['deskripsi'])) ?></p>
+
+            <form class="form-beli" action="checkout.php" method="post">
+                <input type="hidden" name="id_produk" value="<?= $produk['id'] ?>">
+                <input type="hidden" name="harga_satuan" value="<?= $produk['harga'] ?>">
+                <label for="jumlah">Jumlah:</label>
+                <input type="number" name="jumlah" id="jumlah" value="1" min="1" required>
+                <button type="submit">Checkout</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

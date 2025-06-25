@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Cek apakah user ada
-    $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username'");
+    $query = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
     $data = mysqli_fetch_assoc($query);
 
     if ($data && password_verify($password, $data['password'])) {

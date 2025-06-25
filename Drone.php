@@ -64,7 +64,7 @@ include 'koneksi.php'; // koneksi ke database
                     </div>
                     <div class="bottom-row">
                         <div class="price">Rp. <?php echo number_format($data['harga'], 0, ',', '.'); ?></div>
-                        <button class="buy-btn">Beli</button>
+                        <a href="detail_produk.php?id=' . $produk['id'] . '" class="buy-btn">Beli</a>
                     </div>
                 </div>
             <?php } ?>

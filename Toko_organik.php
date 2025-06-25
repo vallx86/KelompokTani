@@ -48,22 +48,22 @@
         if ($result->num_rows > 0) {
             while ($produk = $result->fetch_assoc()) {
                 echo '<div class="card">
-                        <div class="circle-img">
-                            <img src="Image/pestisida/' . $produk["gambar"] . '" alt="' . $produk["nama"] . '">
-                        </div>
-                        <div class="title-placeholder">' . $produk["nama"] . '</div>
-                        <div class="text-content">';
-                // Pisah deskripsi ke dalam <p>
-                $deskripsi = explode("\n", $produk["deskripsi"]);
-                foreach ($deskripsi as $line) {
-                    echo '<p>' . htmlspecialchars($line) . '</p>';
-                }
-                echo    '</div>
-                        <div class="bottom-row">
-                            <div class="price">Rp. ' . number_format($produk["harga"], 0, ',', '.') . '</div>
-                            <button class="buy-btn">Beli</button>
-                        </div>
-                    </div>';
+                <div class="circle-img">
+                    <img src="Image/pestisida/' . $produk["gambar"] . '" alt="' . $produk["nama"] . '">
+                </div>
+                <div class="title-placeholder">' . $produk["nama"] . '</div>
+                <div class="text-content">';
+        $deskripsi = explode("\n", $produk["deskripsi"]);
+        foreach ($deskripsi as $line) {
+            echo '<p>' . htmlspecialchars($line) . '</p>';
+        }
+        echo '</div>
+                <div class="bottom-row">
+                    <div class="price">Rp. ' . number_format($produk["harga"], 0, ',', '.') . '</div>
+                    <a href="detail_produk.php?id=' . $produk['id'] . '" class="buy-btn">Beli</a>
+                </div>
+            </div>';
+        
             }
         } else {
             echo "<p>Tidak ada produk pestisida ditemukan.</p>";

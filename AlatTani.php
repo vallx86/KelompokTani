@@ -68,7 +68,7 @@ $result = $koneksi->query($sql);
                     <div class="price">Rp.
                         <?= number_format($row['harga'], 0, ',', '.') ?>
                     </div>
-                    <button class="buy-btn">Beli</button>
+                    <a href="detail_produk.php?id=' . $produk['id'] . '" class="buy-btn">Beli</a>
                 </div>
             </div>
             <?php endwhile; ?>
