@@ -663,6 +663,108 @@ nav ul li a:focus {
       line-height: 1.6;
   }
 
+  .petaniGenZ-style-section {
+  background-color: #fff;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.petaniGenZ-container {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.petaniGenZ-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.petaniGenZ-text {
+  flex: 1;
+  font-family: 'Segoe UI', sans-serif;
+  color: #000000;
+}
+
+.quote {
+  font-size: 16px;
+  line-height: 1.8;
+  position: relative;
+  padding-left: 30px;
+}
+
+.quote-mark {
+  font-size: 60px;
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  top: -10px;
+}
+
+.quote-bold {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #000000;
+}
+
+.author-name {
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.author-role {
+  color: #010000;
+  
+}
+
+.who1 {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.who1 {
+  background-image: url('https://st4.depositphotos.com/1480128/38052/i/450/depositphotos_380529538-stock-photo-tractor-spraying-pesticides-soy-field.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 60px 0;
+  position: relative;
+  z-index: 0;
+}
+
+.petaniGenZ-style-section {
+  background: rgba(255, 253, 253, 0.5); /* semi-transparent overlay */
+  padding: 40px;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+  backdrop-filter: blur(4px); /* Optional: blur for better readability */
+}
+
+.petaniGenZ-image img {
+  border-radius: 0; /* opsional, bisa disesuaikan */
+  background: none; /* pastikan tidak ada latar belakang */
+  padding: 0;
+  box-shadow: none; /* hilangkan bayangan */
+  max-width: 100%;
+  height: auto;
+}
+
+
  /* produk  */
 
  .kategori-grid-produk {
