@@ -1,19 +1,20 @@
 <?php include 'koneksi.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PetaniGenZ - Traktor</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetaniGenZ - tractor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="logo-title">
-            <img src="Image/LOGO GENZ.png" alt="logo" />
+            <img src="Image/LOGO GENZ.png" alt="logo">
             <h1>PetaniGenZ</h1>
         </div>
         <nav>
@@ -32,35 +33,43 @@
             <div>
                 <a href="Toko_organik.php" class="btn-outline">Pupuk Organik</a>
                 <a href="Anorganik.php" class="btn-outline">Pupuk Anorganik</a>
-                <a href="Pestisida.php" class="btn-outline">Pestisida</a>
+                <a href="Pestisida.php" class="btn-green">Pestisida</a>
                 <a href="Drone.php" class="btn-outline">Drone</a>
                 <a href="AlatTani.php" class="btn-outline">Alat Tani</a>
-                <a href="Tractor.php" class="btn-green">Tractor</a>
+                <a href="Tractor.php" class="btn-outline">Tractor</a>
             </div>
         </section>
 
         <section class="products">
             <?php
         $query = "SELECT * FROM produk WHERE kategori='Traktor'";
-        $result = mysqli_query($conn, $query);
+        $result = $conn->query($query);
 
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo '
-            <div class="card">
+        if ($result->num_rows > 0) {
+            while ($produk = $result->fetch_assoc()) {
+                echo '<div class="card">
                 <div class="circle-img">
-                    <img src="' . $row['gambar'] . '" alt="' . $row['nama'] . '">
+                    <img src="' . $produk["gambar"] . '" alt="' . $produk["nama"] . '">
                 </div>
-                <div class="title-placeholder">' . $row['nama'] . '</div>
-                <div class="text-content">
-                    <p>' . nl2br($row['deskripsi']) . '</p>
-                </div>
-                <div class="bottom-row">
-                    <div class="price">Rp. ' . number_format($row['harga'], 0, ',', '.') . '</div>
-                    <button class="buy-btn">Beli</button>
-                </div>
-            </div>
-            ';
+                <div class="title-placeholder">' . $produk["nama"] . '</div>
+                <div class="text-content">';
+        $deskripsi = explode("\n", $produk["deskripsi"]);
+        foreach ($deskripsi as $line) {
+            echo '<p>' . htmlspecialchars($line) . '</p>';
         }
+        echo '</div>
+                <div class="bottom-row">
+                    <div class="price">Rp. ' . number_format($produk["harga"], 0, ',', '.') . '</div>
+                    <a href="detail_produk.php?id=' . $produk['id'] . '" class="buy-btn">Beli</a>
+                </div>
+            </div>';
+        
+            }
+        } else {
+            echo "<p>Tidak ada produk traktor ditemukan.</p>";
+        }
+
+        $conn->close();
         ?>
         </section>
 

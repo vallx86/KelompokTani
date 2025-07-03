@@ -44,12 +44,13 @@ include 'koneksi.php'; // koneksi ke database
 
         <section class="products">
             <?php
-            $query = mysqli_query($conn, "SELECT * FROM produk WHERE kategori = 'Drone'");
+            $query = mysqli_query($conn, "SELECT * FROM produk WHERE kategori = 'drone'");
             while ($data = mysqli_fetch_array($query)) {
                 ?>
                 <div class="card">
                     <div class="circle-img">
-                        <img src="<?php echo $data['gambar']; ?>" alt="<?php echo $data['nama']; ?>">
+                    <img src="Image/drone/<?php echo $data['gambar']; ?>" alt="<?php echo $data['nama']; ?>">
+
                         <!-- Debug path -->
                         <!-- <p><?php echo $data['gambar']; ?></p> -->
                     </div>
