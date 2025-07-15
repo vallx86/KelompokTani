@@ -43,7 +43,7 @@
         <section class="products">
             <?php
         $query = "SELECT * FROM produk WHERE kategori='Traktor'";
-        $result = $conn->query($query);
+        $result = $koneksi->query($query);
 
         if ($result->num_rows > 0) {
             while ($produk = $result->fetch_assoc()) {
@@ -53,10 +53,10 @@
                 </div>
                 <div class="title-placeholder">' . $produk["nama"] . '</div>
                 <div class="text-content">';
-        $deskripsi = explode("\n", $produk["deskripsi"]);
-        foreach ($deskripsi as $line) {
-            echo '<p>' . htmlspecialchars($line) . '</p>';
-        }
+        // $deskripsi = explode("\n", $produk["deskripsi"]);
+        // foreach ($deskripsi as $line) {
+        //     echo '<p>' . htmlspecialchars($line) . '</p>';
+        // }
         echo '</div>
                 <div class="bottom-row">
                     <div class="price">Rp. ' . number_format($produk["harga"], 0, ',', '.') . '</div>
@@ -69,7 +69,7 @@
             echo "<p>Tidak ada produk traktor ditemukan.</p>";
         }
 
-        $conn->close();
+        $koneksi->close();
         ?>
         </section>
 

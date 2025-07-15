@@ -1,12 +1,12 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = "root"; // Ganti sesuai password kamu
-$db = "petani_genz";
+$pass = "root";
+$db   = "petani_genz"; // Ganti sesuai nama database kamu
 
-$conn = new mysqli($host, $user, $pass, $db);
+$koneksi = mysqli_connect($host, $user, $pass, $db);
 
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+if (!$koneksi) {
+    die("Koneksi ke database gagal: " . mysqli_connect_error());
 }
 ?>

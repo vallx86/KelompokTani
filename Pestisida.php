@@ -1,3 +1,5 @@
+<?php include 'koneksi.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetaniGenZ - Pestisida</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -39,39 +42,34 @@
 
         <section class="products">
             <?php
-        // Koneksi ke database
-        $conn = new mysqli("localhost", "root", "root", "petani_genz");
-
-        if ($conn->connect_error) {
-            die("Koneksi gagal: " . $conn->connect_error);
-        }
-
-        // Ambil data produk kategori pestisida
-        $sql = "SELECT * FROM produk WHERE kategori = 'pestisida'";
-        $result = $conn->query($sql);
+        $query = "SELECT * FROM produk WHERE kategori='pestisida'";
+        $result = $koneksi->query($query);
 
         if ($result->num_rows > 0) {
-            while($produk = $result->fetch_assoc()) {
-                echo '
-                <div class="card">
-                    <div class="circle-img">
-                        <img src="Image/pestisida/' . htmlspecialchars($produk["gambar"]) . '" alt="' . htmlspecialchars($produk["nama"]) . '">
-                    </div>
-                    <div class="title-placeholder">' . htmlspecialchars($produk["nama"]) . '</div>
-                    <div class="text-content">
-                        <p>' . nl2br(htmlspecialchars($produk["deskripsi"])) . '</p>
-                    </div>
-                    <div class="bottom-row">
-                        <div class="price">Rp. ' . number_format($produk["harga"], 0, ',', '.') . '</div>
-                       <a href="detail_produk.php?id=' . $produk['id'] . '" class="buy-btn">Beli</a>
-                    </div>
-                </div>';
+            while ($produk = $result->fetch_assoc()) {
+                echo '<div class="card">
+                <div class="circle-img">
+                    <img src="Image/pestisida/' . $produk["gambar"] . '" alt="' . $produk["nama"] . '">
+                </div>
+                <div class="title-placeholder">' . $produk["nama"] . '</div>
+                <div class="text-content">';
+        // $deskripsi = explode("\n", $produk["deskripsi"]);
+        // foreach ($deskripsi as $line) {
+        //     echo '<p>' . htmlspecialchars($line) . '</p>';
+        // }
+        echo '</div>
+                <div class="bottom-row">
+                    <div class="price">Rp. ' . number_format($produk["harga"], 0, ',', '.') . '</div>
+                    <a href="detail_produk.php?id=' . $produk['id'] . '" class="buy-btn">Beli</a>
+                </div>
+            </div>';
+        
             }
         } else {
-            echo "<p>Tidak ada produk pestisida yang tersedia.</p>";
+            echo "<p>Tidak ada produk pestisida ditemukan.</p>";
         }
 
-        $conn->close();
+        $koneksi->close();
         ?>
         </section>
 

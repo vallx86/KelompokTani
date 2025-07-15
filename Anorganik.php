@@ -1,25 +1,17 @@
-<?php
-$koneksi = new mysqli("localhost", "root", "root", "petani_genz");
-if ($koneksi->connect_error) {
-    die("Koneksi gagal: " . $koneksi->connect_error);
-}
-
-$sql = "SELECT * FROM produk WHERE kategori='Pupuk Anorganik'";
-$result = $koneksi->query($sql);
-?>
+<?php include 'koneksi.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>PetaniGenZ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetaniGenZ - Pupuk Anorganik</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
     <header>
         <div class="logo-title">
             <img src="Image/LOGO GENZ.png" alt="logo">
@@ -38,41 +30,47 @@ $result = $koneksi->query($sql);
 
     <main>
         <section class="btn-header">
-         <div>
+            <div>
                 <a href="Toko_organik.php" class="btn-outline">Pupuk Organik</a>
                 <a href="Anorganik.php" class="btn-outline">Pupuk Anorganik</a>
-                <a href="Pestisida.php" class="btn-outline">Pestisida</a>
+                <a href="Pestisida.php" class="btn-green">Pestisida</a>
                 <a href="Drone.php" class="btn-outline">Drone</a>
-                <a href="AlatTani.php" class="btn-green">Alat Tani</a>
+                <a href="AlatTani.php" class="btn-outline">Alat Tani</a>
                 <a href="Tractor.php" class="btn-outline">Tractor</a>
             </div>
         </section>
 
         <section class="products">
-            <?php while ($row = $result->fetch_assoc()): ?>
-            <div class="card">
+            <?php
+            $query = "SELECT * FROM produk WHERE kategori='Anorganik'";
+            $result = $koneksi->query($query);
+
+            if ($result->num_rows > 0) {
+                while ($produk = $result->fetch_assoc()) {
+                    echo '<div class="card">
                 <div class="circle-img">
-                    <img src="<?= $row['gambar'] ?>" alt="<?= $row['nama'] ?>">
+                    <img src="Image/anorganik/' . $produk["gambar"] . '" alt="' . $produk["nama"] . '">
                 </div>
-                <div class="title-placeholder">
-                    <?= $row['nama'] ?>
-                </div>
-                <div class="text-content">
-                    <?php
-                    $deskripsi = explode('.', $row['deskripsi']);
-                    foreach ($deskripsi as $baris) {
-                        if (trim($baris)) echo "<p>" . trim($baris) . "</p>";
-                    }
-                ?>
-                </div>
+                <div class="title-placeholder">' . $produk["nama"] . '</div>
+                <div class="text-content">';
+                    // $deskripsi = explode("\n", $produk["deskripsi"]);
+                    // foreach ($deskripsi as $line) {
+                    //     echo '<p>' . htmlspecialchars($line) . '</p>';
+                    // }
+                    echo '</div>
                 <div class="bottom-row">
-                    <div class="price">Rp.
-                        <?= number_format($row['harga'], 0, ',', '.') ?>
-                    </div>
+                    <div class="price">Rp. ' . number_format($produk["harga"], 0, ',', '.') . '</div>
                     <a href="detail_produk.php?id=' . $produk['id'] . '" class="buy-btn">Beli</a>
                 </div>
-            </div>
-            <?php endwhile; ?>
+            </div>';
+
+                }
+            } else {
+                echo "<p>Tidak ada produk Anorganik ditemukan.</p>";
+            }
+
+            $koneksi->close();
+            ?>
         </section>
 
         <section class="footer-info">
@@ -99,7 +97,6 @@ $result = $koneksi->query($sql);
             </div>
         </section>
     </main>
-
 </body>
 
 </html>

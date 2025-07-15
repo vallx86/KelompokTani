@@ -1,16 +1,17 @@
 <?php
 include 'koneksi.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash password
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = htmlspecialchars($_POST['username']);
+    $email = htmlspecialchars($_POST['email']);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $cek = mysqli_query($conn, "SELECT * FROM user WHERE username='$username'");
-    if (mysqli_num_rows($cek) > 0) {
-        echo "<script>alert('Username sudah terdaftar'); window.location.href='register.html';</script>";
+    $query = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
+
+    if (mysqli_query($koneksi, $query)) {
+        echo "Pendaftaran berhasil!";
     } else {
-        mysqli_query($conn, "INSERT INTO user (username, password) VALUES ('$username', '$password')");
-        echo "<script>alert('Registrasi berhasil!'); window.location.href='login.html';</script>";
+        echo "Error: " . mysqli_error($koneksi);
     }
 }
 ?>

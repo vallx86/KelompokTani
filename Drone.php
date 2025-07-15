@@ -1,6 +1,4 @@
-<?php
-include 'koneksi.php'; // koneksi ke database
-?>
+<?php include 'koneksi.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +20,7 @@ include 'koneksi.php'; // koneksi ke database
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">Riwayat</a></li>
+                <li><a href="#">Keranjang</a></li>
                 <li><a href="About.html">About us</a></li>
                 <li><a href="Contact.html">Contact</a></li>
                 <li><a href="login.html">Log In</a></li>
@@ -35,8 +33,8 @@ include 'koneksi.php'; // koneksi ke database
             <div>
                 <a href="Toko_organik.php" class="btn-outline">Pupuk Organik</a>
                 <a href="Anorganik.php" class="btn-outline">Pupuk Anorganik</a>
-                <a href="Pestisida.php" class="btn-outline">Pestisida</a>
-                <a href="Drone.php" class="btn-green">Drone</a>
+                <a href="Pestisida.php" class="btn-green">Pestisida</a>
+                <a href="Drone.php" class="btn-outline">Drone</a>
                 <a href="AlatTani.php" class="btn-outline">Alat Tani</a>
                 <a href="Tractor.php" class="btn-outline">Tractor</a>
             </div>
@@ -44,31 +42,35 @@ include 'koneksi.php'; // koneksi ke database
 
         <section class="products">
             <?php
-            $query = mysqli_query($conn, "SELECT * FROM produk WHERE kategori = 'drone'");
-            while ($data = mysqli_fetch_array($query)) {
-                ?>
-                <div class="card">
-                    <div class="circle-img">
-                    <img src="Image/drone/<?php echo $data['gambar']; ?>" alt="<?php echo $data['nama']; ?>">
+        $query = "SELECT * FROM produk WHERE kategori='drone'";
+        $result = $koneksi->query($query);
 
-                        <!-- Debug path -->
-                        <!-- <p><?php echo $data['gambar']; ?></p> -->
-                    </div>
-                    <div class="title-placeholder"><?php echo $data['nama']; ?></div>
-                    <div class="text-content">
-                        <?php
-                        $deskripsi = explode("\n", $data['deskripsi']);
-                        foreach ($deskripsi as $baris) {
-                            echo "<p>" . htmlspecialchars($baris) . "</p>";
-                        }
-                        ?>
-                    </div>
-                    <div class="bottom-row">
-                        <div class="price">Rp. <?php echo number_format($data['harga'], 0, ',', '.'); ?></div>
-                        <a href="detail_produk.php?id=' . $produk['id'] . '" class="buy-btn">Beli</a>
-                    </div>
+        if ($result->num_rows > 0) {
+            while ($produk = $result->fetch_assoc()) {
+                echo '<div class="card">
+                <div class="circle-img">
+                    <img src="Image/drone/' . $produk["gambar"] . '" alt="' . $produk["nama"] . '">
                 </div>
-            <?php } ?>
+                <div class="title-placeholder">' . $produk["nama"] . '</div>
+                <div class="text-content">';
+        // $deskripsi = explode("\n", $produk["deskripsi"]);
+        // foreach ($deskripsi as $line) {
+        //     echo '<p>' . htmlspecialchars($line) . '</p>';
+        // }
+        echo '</div>
+                <div class="bottom-row">
+                    <div class="price">Rp. ' . number_format($produk["harga"], 0, ',', '.') . '</div>
+                    <a href="detail_produk.php?id=' . $produk['id'] . '" class="buy-btn">Beli</a>
+                </div>
+            </div>';
+        
+            }
+        } else {
+            echo "<p>Tidak ada produk drone ditemukan.</p>";
+        }
+
+        $koneksi->close();
+        ?>
         </section>
 
         <section class="footer-info">

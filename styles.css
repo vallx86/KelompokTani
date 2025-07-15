@@ -229,17 +229,18 @@ nav ul li a:focus {
     text-align: center;
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     color: #2e7d32;
 }
 
 .text-content {
-    text-align: center;
-    font-size: 13px;
-    line-height: 1.4;
-    margin-bottom: 15px;
-    color: #555;
-    min-height: 60px;
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+        color: #555;
+        min-height: 10px;
 }
 
 .bottom-row {
@@ -247,6 +248,7 @@ nav ul li a:focus {
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
+    padding: 0 5px;
 }
 
 .price {
@@ -731,7 +733,6 @@ nav ul li a:focus {
 }
 
 .who1 {
-  background-image: url('https://st4.depositphotos.com/1480128/38052/i/450/depositphotos_380529538-stock-photo-tractor-spraying-pesticides-soy-field.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -813,3 +814,6 @@ nav ul li a:focus {
  .btn-produk:hover {
      background-color: #1e8449;
  }
+
+
+ 
