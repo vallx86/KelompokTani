@@ -458,7 +458,7 @@ nav ul li a:focus {
 
 .Footer-Contact-Section {
     margin-top: 10px;
-    margin-bottom: 35px;
+    margin-bottom: 50px;
     flex: 1;
 }
 
@@ -469,6 +469,7 @@ nav ul li a:focus {
     margin-top: 50px;
 }
 
+/* Container utama footer */
 .Footer-Contact {
     background-color: #5eb101;
     padding: 5px 20px;
@@ -482,6 +483,22 @@ nav ul li a:focus {
     gap: 15px;
     margin: 15px 0;
 }
+
+/* Tambahan untuk styling gambar sosmed */
+.Contact-Sosmed img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-left: 10px;
+    vertical-align: middle;
+    background-color: transparent; /* memastikan latar transparan */
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: none; /* hilangkan bayangan jika tidak perlu */
+}
+
+
+
 
 /* TOKO */
 .btn-header {
