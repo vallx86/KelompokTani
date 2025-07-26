@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - PetaniGenZ</title>
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <img src="../assets/Images/LOGO.png" alt="PetaniGenZ Logo" class="logo" width="30px" height="30px">
+            <h2 class="form-title">Daftar ke PetaniGenZ</h2>
+            <p class="form-subtitle">Bergabunglah dengan komunitas petani modern Indonesia!</p>
+        </div>
+
+        <form action="register.php" method="post" class="login-form">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input class="form-input" type="text" name="username" id="username" placeholder="Pilih username unik"
+                    required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input class="form-input" type="email" name="email" id="email" placeholder="Masukkan email aktif Anda"
+                    required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input class="form-input" type="password" name="password" id="password"
+                    placeholder="Buat password yang kuat" required>
+            </div>
+
+            <button class="form-button" type="submit">Daftar</button>
+
+            <div class="form-links">
+                <p class="form-link">Sudah punya akun? <a href="login.html">Masuk sekarang</a></p>
+                <p class="form-link"><a href="../pages/">Kembali ke Beranda</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - PetaniGenZ</title>
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <img src="../assets/Images/LOGO.png" alt="PetaniGenZ Logo" class="logo" width="30px" height="30px">
+            <h2 class="form-title">Masuk ke PetaniGenZ</h2>
+            <p class="form-subtitle">Selamat datang kembali! Silakan masuk ke akun Anda.</p>
+        </div>
+
+        <form action="login.php" method="post" class="login-form">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input class="form-input" type="text" name="username" id="username" placeholder="Masukkan username Anda"
+                    required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input class="form-input" type="password" name="password" id="password"
+                    placeholder="Masukkan password Anda" required>
+            </div>
+
+            <button class="form-button" type="submit">Masuk</button>
+
+            <div class="form-links">
+                <p class="form-link">Belum punya akun? <a href="register.html">Daftar sekarang</a></p>
+                <p class="form-link"><a href="../pages/">Kembali ke Beranda</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
