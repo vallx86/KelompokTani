@@ -3,8 +3,8 @@
 $base_url = '../../';
 require_once '../../config/koneksi.php';
 
-$kategori = 'organik';
-$judul = 'organik';
+$kategori = 'anorganik';
+$judul = 'anorganik';
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ $judul = 'organik';
 
             if ($result->num_rows > 0) {
                 while ($produk = $result->fetch_assoc()) {
-                    $image_path = "../../assets/Images/organik/" . $produk['gambar'];
+                    $image_path = "../../assets/images/anorganik/" . $produk['gambar'];
                     ?>
                     <div class="card">
                         <div class="circle-img">

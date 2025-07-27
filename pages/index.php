@@ -22,7 +22,7 @@ require_once '../config/koneksi.php';
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-right">
-                <img src="../assets/images/Hasilpanen.png" alt="icon" class="hero-img">
+                <img src="../assets/Images/Hasilpanen.png" alt="icon" class="hero-img">
             </div>
             <div class="hero-left">
                 <h1>ORDER & SEWA<br>YANG KAMU BUTUHKAN</h1>
@@ -46,7 +46,7 @@ require_once '../config/koneksi.php';
 
             if ($result && $result->num_rows > 0) {
                 while ($produk = $result->fetch_assoc()) {
-                    $image_path = "../assets/images/products/" . strtolower($produk['kategori']) . "/" . $produk['gambar'];
+                    $image_path = "../assets/Images/" . strtolower($produk['kategori']) . "/" . $produk['gambar'];
                     ?>
                     <div class="card">
                         <div class="circle-img">
@@ -78,7 +78,7 @@ require_once '../config/koneksi.php';
         <!-- Edukasi -->
         <section class="who1">
             <div class="who-right">
-                <img src="../assets/images/padi2.png" alt="Tutorial Menanam" class="hero-img">
+                <img src="../assets/Images/padi2.png" alt="Tutorial Menanam" class="hero-img">
             </div>
             <div class="whotxt-right">
                 <h1>Kamu Tidak Tahu Cara Menanam Yang Baik?</h1>

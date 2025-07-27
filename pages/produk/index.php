@@ -27,42 +27,42 @@ require_once '../../config/koneksi.php';
         <div class="kategori-grid-produk">
             <!-- Kategori 1 -->
             <div class="kategori-box-produk">
-                <img src="../../assets/images/products/organik/kompos.jpg" alt="Pupuk Organik">
+                <img src="../../assets/Images/organik/POP.png" alt="Pupuk Organik">
                 <h2>Pupuk Organik</h2>
                 <a href="organik.php" class="btn-produk">Lihat Produk</a>
             </div>
 
             <!-- Kategori 2 -->
             <div class="kategori-box-produk">
-                <img src="../../assets/images/products/anorganik/anorganik_cair.jpg" alt="Pupuk Anorganik">
+                <img src="../../assets/Images/anorganik/petro.jpg" alt="Pupuk Anorganik">
                 <h2>Pupuk Anorganik</h2>
                 <a href="anorganik.php" class="btn-produk">Lihat Produk</a>
             </div>
 
             <!-- Kategori 3 -->
             <div class="kategori-box-produk">
-                <img src="../../assets/images/products/pestisida/winsa.png" alt="Pestisida">
+                <img src="../../assets/Images/pestisida/Pestisida Winsa @ 1Ltr Obat Herbisida Pembasmi Hama Gulma Rumput Liar.png" alt="Pestisida">
                 <h2>Pestisida</h2>
                 <a href="pestisida.php" class="btn-produk">Lihat Produk</a>
             </div>
 
             <!-- Kategori 4 -->
             <div class="kategori-box-produk">
-                <img src="../../assets/images/products/drone/agras_t25.png" alt="Drone">
+                <img src="../../assets/Images/drone/EV416 16L .png" alt="Drone">
                 <h2>Drone</h2>
                 <a href="drone.php" class="btn-produk">Lihat Produk</a>
             </div>
 
             <!-- Kategori 5 -->
             <div class="kategori-box-produk">
-                <img src="../../assets/images/products/alat_tani/arit.jpg" alt="Alat Tani">
+                <img src="../../assets/Images/alat_tani/arit.jpg" alt="Alat Tani">
                 <h2>Alat Tani</h2>
                 <a href="alat_tani.php" class="btn-produk">Lihat Produk</a>
             </div>
 
             <!-- Kategori 6 -->
             <div class="kategori-box-produk">
-                <img src="../../assets/images/products/traktor/traktor_quick.png" alt="Traktor">
+                <img src="../../assets/Images/traktor/Traktor Quick Capung Rawa  Mesin Bajak Sawah  Hand Tractor Best.png" alt="Traktor">
                 <h2>Traktor</h2>
                 <a href="traktor.php" class="btn-produk">Lihat Produk</a>
             </div>

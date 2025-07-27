@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS user (
 CREATE TABLE IF NOT EXISTS produk (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nama VARCHAR(100) NOT NULL,
-    kategori ENUM('organik', 'anorganik', 'pestisida', 'drone', 'alat tani', 'traktor') NOT NULL,
+    kategori ENUM('organik', 'anorganik', 'pestisida', 'drone','anorganik' 'alat tani', 'traktor') NOT NULL,
     harga DECIMAL(12,2) NOT NULL,
     stok INT NOT NULL DEFAULT 0,
     deskripsi TEXT,

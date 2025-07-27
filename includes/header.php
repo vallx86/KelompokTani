@@ -14,6 +14,7 @@ if (!isset($koneksi)) {
         <ul>
             <li><a href="<?php echo isset($base_url) ? $base_url : '../'; ?>pages/index.php">Home</a></li>
             <li><a href="<?php echo isset($base_url) ? $base_url : '../'; ?>pages/produk/">Produk</a></li>
+            <li><a href="<?php echo isset($base_url) ? $base_url : '../'; ?>pages/riwayat.php/">riwayat</a></li>
             <li><a href="<?php echo isset($base_url) ? $base_url : '../'; ?>pages/about.html">About us</a></li>
             <li><a href="<?php echo isset($base_url) ? $base_url : '../'; ?>pages/contact.html">Contact</a></li>
 

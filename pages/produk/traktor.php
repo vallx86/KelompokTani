@@ -45,16 +45,16 @@ $judul = 'traktor';
 
             if ($result->num_rows > 0) {
                 while ($produk = $result->fetch_assoc()) {
-                    $image_path = "../../assets/images/traktor" . strtolower($produk['kategori']) . "/" . $produk['gambar'];
+                    $image_path = "../../assets/images/traktor/" . $produk['gambar'];
                     ?>
                     <div class="card">
                         <div class="circle-img">
                             <img src="<?php echo $image_path; ?>" alt="<?php echo htmlspecialchars($produk['nama']); ?>">
                         </div>
                         <div class="title-placeholder"><?php echo htmlspecialchars($produk['nama']); ?></div>
-                        <div class="text-content">
+                        <!-- <div class="text-content">
                             <p><?php echo htmlspecialchars(substr($produk['deskripsi'], 0, 80)) . '...'; ?></p>
-                        </div>
+                        </div> -->
                         <div class="bottom-row">
                             <div class="price">Rp. <?php echo number_format($produk['harga'], 0, ',', '.'); ?></div>
                             <a href="detail_produk.php?id=<?php echo $produk['id']; ?>" class="buy-btn">Detail</a>
