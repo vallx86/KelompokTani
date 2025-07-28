@@ -313,10 +313,10 @@ $sewa_result = $koneksi->query($sewa_query);
         <!-- Tabs -->
         <div class="tabs">
             <button class="tab active" onclick="showTab('transaksi')">
-                💰 Transaksi Pembelian (<?php echo $transaksi_result->num_rows; ?>)
+                Transaksi Pembelian (<?php echo $transaksi_result->num_rows; ?>)
             </button>
             <button class="tab" onclick="showTab('sewa')">
-                🚁 Sewa Drone (<?php echo $sewa_result->num_rows; ?>)
+                Sewa Drone (<?php echo $sewa_result->num_rows; ?>)
             </button>
         </div>
 
@@ -324,7 +324,7 @@ $sewa_result = $koneksi->query($sewa_query);
         <div id="transaksi-tab" class="tab-content active">
             <div class="data-table">
                 <div class="table-header">
-                    <h3>📊 Daftar Transaksi Pembelian</h3>
+                    <h3>Daftar Transaksi Pembelian</h3>
                 </div>
                 
                 <div class="data-grid">
@@ -332,7 +332,7 @@ $sewa_result = $koneksi->query($sewa_query);
                         <?php while ($transaksi = $transaksi_result->fetch_assoc()): ?>
                             <div class="data-item">
                                 <div class="product-image">
-                                    <img src="../assets/images/products/<?php echo strtolower($transaksi['kategori']); ?>/<?php echo $transaksi['gambar']; ?>" 
+                                    <img src="../assets/images/<?php echo strtolower($transaksi['kategori']); ?>/<?php echo $transaksi['gambar']; ?>" 
                                          alt="<?php echo htmlspecialchars($transaksi['nama_produk']); ?>"
                                          style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                                 </div>
@@ -376,7 +376,7 @@ $sewa_result = $koneksi->query($sewa_query);
         <div id="sewa-tab" class="tab-content">
             <div class="data-table">
                 <div class="table-header">
-                    <h3>🚁 Daftar Sewa Drone</h3>
+                    <h3> Daftar Sewa Drone</h3>
                 </div>
                 
                 <div class="data-grid">

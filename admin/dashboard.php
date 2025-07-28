@@ -4,7 +4,7 @@ $base_url = '../';
 require_once '../config/koneksi.php';
 
 // Cek apakah user adalah admin
-if (!isLoggedIn() || getUsername() !== 'admin') {
+if (!isLoggedIn() || getUsername() !== 'admin' ) {
     header("Location: ../auth/login.html");
     exit;
 }
@@ -155,7 +155,7 @@ $stats = $stats_result->fetch_assoc();
 
     <div class="admin-container">
         <div class="admin-header">
-            <h1>🌾 Admin Dashboard PetaniGenZ</h1>
+            <h1> Admin Dashboard PetaniGenZ</h1>
             <p>Kelola seluruh sistem dan pantau aktivitas platform</p>
         </div>
 
@@ -182,37 +182,31 @@ $stats = $stats_result->fetch_assoc();
         <!-- Menu Admin -->
         <div class="admin-menu">
             <div class="menu-card">
-                <div class="menu-icon">📦</div>
+                <div class="menu-icon"></div>
                 <div class="menu-title">Kelola Produk</div>
                 <div class="menu-desc">Tambah, edit, dan hapus produk. Atur stok dan harga.</div>
                 <a href="kelola_produk.php" class="btn-admin">Kelola Produk</a>
             </div>
 
             <div class="menu-card">
-                <div class="menu-icon">👥</div>
+                <div class="menu-icon"></div>
                 <div class="menu-title">Kelola Pengguna</div>
                 <div class="menu-desc">Lihat dan kelola data pengguna yang terdaftar.</div>
                 <a href="kelola_user.php" class="btn-admin">Kelola User</a>
             </div>
 
             <div class="menu-card">
-                <div class="menu-icon">💳</div>
+                <div class="menu-icon"></div>
                 <div class="menu-title">Kelola Transaksi</div>
                 <div class="menu-desc">Pantau dan kelola semua transaksi pembelian.</div>
                 <a href="kelola_transaksi.php" class="btn-admin">Kelola Transaksi</a>
             </div>
 
-            <div class="menu-card">
-                <div class="menu-icon">🚁</div>
-                <div class="menu-title">Kelola Sewa Drone</div>
-                <div class="menu-desc">Pantau dan kelola penyewaan drone pertanian.</div>
-                <a href="kelola_sewa.php" class="btn-admin">Kelola Sewa</a>
-            </div>
         </div>
 
         <!-- Aktivitas Terbaru -->
         <div class="recent-activities">
-            <h3>📊 Aktivitas Terbaru</h3>
+            <h3>Aktivitas Terbaru</h3>
             <?php
             $activity_query = "
                 SELECT 'transaksi' as type, u.username, p.nama as item, t.created_at 

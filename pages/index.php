@@ -75,6 +75,27 @@ require_once '../config/koneksi.php';
             </div>
         </section>
 
+        <!-- Admin Section -->
+        <?php if (isLoggedIn() && getUsername() === 'admin'): ?>
+        <section class="admin-section" style="background: linear-gradient(135deg, #4CAF50, #45a049); color: white; padding: 40px; margin: 40px 0; border-radius: 15px; text-align: center;">
+            <h2 style="color: white;">Selamat Datang Admin!</h2>
+            <p style="margin: 20px 0; font-size: 18px;">
+                Anda login sebagai administrator. Kelola sistem PetaniGenZ dari dashboard admin.
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="../admin/dashboard.php" style="background: white; color: #4CAF50; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: all 0.3s;">
+                     Dashboard Admin
+                </a>
+                <a href="../admin/kelola_user.php" style="background: rgba(255,255,255,0.2); color: white; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: all 0.3s; border: 2px solid white;">
+                     Kelola User
+                </a>
+                <a href="../admin/kelola_transaksi.php" style="background: rgba(255,255,255,0.2); color: white; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: all 0.3s; border: 2px solid white;">
+                     Kelola Transaksi
+                </a>
+            </div>
+        </section>
+        <?php endif; ?>
+
         <!-- Edukasi -->
         <section class="who1">
             <div class="who-right">

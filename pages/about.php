@@ -1,3 +1,9 @@
+<?php
+// pages/about.html
+$base_url = '../';
+require_once '../config/koneksi.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,21 +16,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo-title">
-            <img src="../assets/images/logo/LOGO_GENZ.png" alt="logo">
-            <h1>PetaniGenZ</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="produk/">Produk</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="../auth/login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include '../includes/header.php'; ?>
 
     <section class="hero-about">
         <div class="hero-content-about">
@@ -143,29 +135,7 @@
         </section>
     </section>
 
-    <section class="footer-info">
-        <h3>Our Services</h3>
-        <div class="services-container">
-            <div class="service">
-                <div class="service-icon">
-                    <img src="../assets/images/icon/friendly.png" alt="Eco Friendly">
-                </div>
-                <p>Eco-Friendly</p>
-            </div>
-            <div class="service">
-                <div class="service-icon">
-                    <img src="../assets/images/icon/delivery.png" alt="Fast Delivery">
-                </div>
-                <p>Fast Delivery</p>
-            </div>
-            <div class="service">
-                <div class="service-icon">
-                    <img src="../assets/images/icon/repeat.png" alt="Easy Returns">
-                </div>
-                <p>Easy Returns</p>
-            </div>
-        </div>
-    </section>
+    <?php include '../includes/footer.php'; ?>
 </body>
 
 </html>

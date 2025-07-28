@@ -374,11 +374,11 @@ $image_path = "../../assets/Images/" . strtolower($produk['kategori']) . "/" . $
                     <div class="purchase-section">
                         <div class="tabs">
                             <button class="tab active" onclick="showTab('beli')">
-                                💰 Beli Produk
+                                 Beli Produk
                             </button>
                             <?php if ($produk['kategori'] === 'drone'): ?>
                                 <button class="tab" onclick="showTab('sewa')">
-                                    🚁 Sewa Drone
+                                     Sewa Drone
                                 </button>
                             <?php endif; ?>
                         </div>
@@ -439,7 +439,7 @@ $image_path = "../../assets/Images/" . strtolower($produk['kategori']) . "/" . $
                                 </div>
 
                                 <button type="submit" class="btn-submit" <?php echo $produk['stok'] <= 0 ? 'disabled' : ''; ?>>
-                                    <?php echo $produk['stok'] <= 0 ? 'Stok Habis' : '🛒 Beli Sekarang'; ?>
+                                    <?php echo $produk['stok'] <= 0 ? 'Stok Habis' : ' Beli Sekarang'; ?>
                                 </button>
                             </form>
                         </div>
@@ -448,7 +448,7 @@ $image_path = "../../assets/Images/" . strtolower($produk['kategori']) . "/" . $
                         <?php if ($produk['kategori'] === 'drone'): ?>
                             <div id="sewa-tab" class="tab-content">
                                 <div class="rental-info">
-                                    <div class="rental-price">💰 Harga Sewa: Rp 200.000 per hari</div>
+                                    <div class="rental-price"> Harga Sewa: Rp 200.000 per hari</div>
                                     <p><strong>Ketentuan Sewa:</strong></p>
                                     <ul>
                                         <li>Minimal sewa 1 hari</li>
@@ -525,7 +525,7 @@ $image_path = "../../assets/Images/" . strtolower($produk['kategori']) . "/" . $
                                     </div>
 
                                     <button type="submit" class="btn-submit" id="sewa-button" disabled>
-                                        🚁 Sewa Drone Sekarang
+                                        Sewa Drone Sekarang
                                     </button>
                                 </form>
                             </div>
@@ -538,7 +538,7 @@ $image_path = "../../assets/Images/" . strtolower($produk['kategori']) . "/" . $
                         </p>
                         <a href="../../auth/login.html" class="btn-submit"
                             style="display: block; text-align: center; text-decoration: none;">
-                            🔐 Login untuk Membeli
+                             Login untuk Membeli
                         </a>
                     </div>
                 <?php endif; ?>

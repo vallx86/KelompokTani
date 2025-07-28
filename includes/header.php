@@ -7,16 +7,16 @@ if (!isset($koneksi)) {
 
 <header>
     <div class="logo-title">
-        <img src="<?php echo isset($base_url) ? $base_url : '../'; ?>assets/images/LOGO.png" alt="logo">
+        <img src="/KelompokTani/assets/Images/LOGO.png" alt="logo">
         <h1>PetaniGenZ</h1>
     </div>
     <nav>
         <ul>
-            <li><a href="<?php echo isset($base_url) ? $base_url : '../'; ?>pages/index.php">Home</a></li>
-            <li><a href="<?php echo isset($base_url) ? $base_url : '../'; ?>pages/produk/">Produk</a></li>
-            <li><a href="<?php echo isset($base_url) ? $base_url : '../'; ?>pages/riwayat.php/">riwayat</a></li>
-            <li><a href="<?php echo isset($base_url) ? $base_url : '../'; ?>pages/about.html">About us</a></li>
-            <li><a href="<?php echo isset($base_url) ? $base_url : '../'; ?>pages/contact.html">Contact</a></li>
+            <li><a href="<?php echo $base_url; ?>pages/index.php">Home</a></li>
+            <li><a href="<?php echo $base_url; ?>pages/produk/">Produk</a></li>
+            <li><a href="<?php echo $base_url; ?>pages/riwayat.php">riwayat</a></li>
+            <li><a href="<?php echo $base_url; ?>pages/about.php">About us</a></li>
+            <li><a href="<?php echo $base_url; ?>pages/contact.php">Contact</a></li>
 
             <?php if (isLoggedIn()): ?>
                 <!-- Profile dropdown -->
@@ -25,12 +25,15 @@ if (!isset($koneksi)) {
                         <?php echo getInitials(getUsername()); ?>
                     </div>
                     <div class="dropdown-content">
-                        <a href="<?php echo isset($base_url) ? $base_url : '../'; ?>pages/profile.php">Profil</a>
-                        <a href="<?php echo isset($base_url) ? $base_url : '../'; ?>auth/logout.php">Logout</a>
+                        <?php if (getUsername() === 'admin'): ?>
+                            <a href="<?php echo $base_url; ?>admin/dashboard.php">Dashboard Admin</a>
+                        <?php endif; ?>
+                        <a href="<?php echo $base_url; ?>pages/profile.php">Profil</a>
+                        <a href="<?php echo $base_url; ?>auth/logout.php">Logout</a>
                     </div>
                 </li>
             <?php else: ?>
-                <li><a href="<?php echo isset($base_url) ? $base_url : '../'; ?>auth/login.html">Login</a></li>
+                <li><a href="<?php echo $base_url; ?>auth/login.html">Login</a></li>
             <?php endif; ?>
         </ul>
     </nav>

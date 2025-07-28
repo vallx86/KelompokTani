@@ -27,10 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['email'] = $user['email'];
         $_SESSION['user_id'] = $user['id'];
 
-        echo "<script>
-            alert('Login berhasil! Selamat datang, " . htmlspecialchars($user['username']) . "');
-            window.location.href = '../pages/index.php';
-        </script>";
+        // Cek apakah user adalah admin
+        if ($user['username'] === 'admin') {
+            echo "<script>
+                alert('Login berhasil! Selamat datang Admin, " . htmlspecialchars($user['username']) . "');
+                window.location.href = '../admin/dashboard.php';
+            </script>";
+        } else {
+            echo "<script>
+                alert('Login berhasil! Selamat datang, " . htmlspecialchars($user['username']) . "');
+                window.location.href = '../pages/index.php';
+            </script>";
+        }
     } else {
         // Gagal login
         echo "<script>
