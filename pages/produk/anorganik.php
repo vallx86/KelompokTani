@@ -25,8 +25,8 @@ $judul = 'anorganik';
         <!-- Navigation Kategori -->
         <section class="btn-header">
             <div>
-                <a href="organik.php" class="btn-green">Pupuk Organik</a>
-                <a href="anorganik.php" class="btn-outline">Pupuk Anorganik</a>
+                <a href="organik.php" class="btn-outline">Pupuk Organik</a>
+                <a href="anorganik.php" class="btn-green">Pupuk Anorganik</a>
                 <a href="pestisida.php" class="btn-outline">Pestisida</a>
                 <a href="drone.php" class="btn-outline">Drone</a>
                 <a href="alat_tani.php" class="btn-outline">Alat Tani</a>
